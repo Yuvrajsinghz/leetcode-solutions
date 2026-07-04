@@ -1,0 +1,33 @@
+// Problem: Range Sum Query - Immutable
+// Difficulty: Easy
+// Approach: Prefix Sum
+// Time Complexity: O(n) for constructor, O(1) per query
+// Space Complexity: O(n)
+
+class NumArray {
+public:
+    vector<int> arr;
+
+    NumArray(vector<int>& nums) {
+
+        if (nums.empty())
+            return;
+
+        arr.resize(nums.size());
+
+        arr[0] = nums[0];
+
+        for (int i = 1; i < nums.size(); i++) {
+            arr[i] = arr[i - 1] + nums[i];
+        }
+    }
+
+    int sumRange(int left, int right) {
+
+        if (left == 0) {
+            return arr[right];
+        }
+
+        return arr[right] - arr[left - 1];
+    }
+};
