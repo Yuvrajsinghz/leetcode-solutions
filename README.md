@@ -1,6 +1,6 @@
 # leetcode-solutions         
 
-#  LeetCode Solutions
+#  LeetCode Solutions 
 
 Welcome to my LeetCode journey! 
 
